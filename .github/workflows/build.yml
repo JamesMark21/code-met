@@ -22,9 +22,10 @@ jobs:
       - name: Install Capacitor
         run: npm install
 
-      - name: Generate Android Project
+      - name: Generate Android Project & Icons
         run: |
           npx cap add android
+          npx capacitor-assets generate --android
           npx cap sync
 
       - name: Build Debug APK
